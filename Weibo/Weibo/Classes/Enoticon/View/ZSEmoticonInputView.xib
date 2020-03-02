@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="H0x-Rv-Df6" customClass="ZSEmoticonInputView" customModule="Weibo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="253"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Kvg-sn-Pbo">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="DJs-0G-wWi" customClass="ZSEmoticontionLayout" customModule="Weibo" customModuleProvider="target">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="H0x-Rv-Df6" id="bJh-N3-xt4"/>
+                    </connections>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="maK-cg-38V" userLabel="底部工具栏" customClass="ZSEmoticonToolbar" customModule="Weibo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="213" width="375" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Rcg-lp-6rT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="eSt-k1-jiY" firstAttribute="bottom" secondItem="maK-cg-38V" secondAttribute="bottom" id="Arr-HD-fsa"/>
+                <constraint firstItem="maK-cg-38V" firstAttribute="top" secondItem="Kvg-sn-Pbo" secondAttribute="bottom" id="LBy-F8-gCl"/>
+                <constraint firstItem="eSt-k1-jiY" firstAttribute="trailing" secondItem="Kvg-sn-Pbo" secondAttribute="trailing" id="NNd-5O-VI9"/>
+                <constraint firstItem="Kvg-sn-Pbo" firstAttribute="leading" secondItem="eSt-k1-jiY" secondAttribute="leading" id="fSe-Vl-S9l"/>
+                <constraint firstItem="maK-cg-38V" firstAttribute="leading" secondItem="eSt-k1-jiY" secondAttribute="leading" id="jh5-0v-8MH"/>
+                <constraint firstItem="eSt-k1-jiY" firstAttribute="trailing" secondItem="maK-cg-38V" secondAttribute="trailing" id="nqO-3x-fXn"/>
+                <constraint firstItem="Kvg-sn-Pbo" firstAttribute="top" secondItem="eSt-k1-jiY" secondAttribute="top" id="yU6-34-Bnv"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="eSt-k1-jiY"/>
+            <connections>
+                <outlet property="bottomToolBarView" destination="maK-cg-38V" id="gxL-ba-K5d"/>
+                <outlet property="collectionView" destination="Kvg-sn-Pbo" id="SMr-7O-QS4"/>
+            </connections>
+            <point key="canvasLocation" x="132" y="321.58920539730138"/>
+        </view>
+    </objects>
+</document>

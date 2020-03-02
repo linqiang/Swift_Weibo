@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZSComposeViewController" customModule="Weibo" customModuleProvider="target">
+            <connections>
+                <outlet property="sendButton" destination="Uw3-a0-1HS" id="Lhm-Qb-Yfh"/>
+                <outlet property="textView" destination="qes-yN-hx7" id="yDz-7W-JVR"/>
+                <outlet property="titleLabel" destination="Jkz-UL-CbU" id="PK4-Hu-nTk"/>
+                <outlet property="toolBarBottomCons" destination="HaQ-Xp-lhX" id="vrw-cP-Atu"/>
+                <outlet property="toolbar" destination="ZPD-ZA-HVW" id="jBg-Qt-WOK"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZPD-ZA-HVW">
+                    <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="J1c-MF-5qq"/>
+                    </constraints>
+                    <items>
+                        <barButtonItem title="Item" id="6vB-rt-N9C"/>
+                    </items>
+                </toolbar>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qes-yN-hx7" customClass="ZSComposeTextView" customModule="Weibo" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="cmM-Qd-mFL"/>
+                    </connections>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="ZPD-ZA-HVW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="56I-2Q-qfC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qes-yN-hx7" secondAttribute="trailing" id="671-Cj-Sf4"/>
+                <constraint firstItem="ZPD-ZA-HVW" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="BOy-Qe-6aC"/>
+                <constraint firstItem="ZPD-ZA-HVW" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="HaQ-Xp-lhX"/>
+                <constraint firstItem="ZPD-ZA-HVW" firstAttribute="top" secondItem="qes-yN-hx7" secondAttribute="bottom" id="NYe-le-R8z"/>
+                <constraint firstItem="qes-yN-hx7" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="WsO-a6-WV9"/>
+                <constraint firstItem="qes-yN-hx7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="v4L-QM-eGz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="83.208395802098963"/>
+        </view>
+        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Uw3-a0-1HS">
+            <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+            <state key="normal" title="发布" backgroundImage="common_button_orange"/>
+            <state key="disabled" backgroundImage="common_button_white_disable">
+                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            </state>
+            <state key="highlighted" backgroundImage="common_button_orange_highlighted"/>
+            <connections>
+                <action selector="postStatus" destination="-1" eventType="touchUpInside" id="M9e-m4-aGy"/>
+            </connections>
+            <point key="canvasLocation" x="-346" y="-60"/>
+        </button>
+        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Jkz-UL-CbU">
+            <rect key="frame" x="0.0" y="0.0" width="198" height="55"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <attributedString key="attributedText">
+                <fragment content="发微博">
+                    <attributes>
+                        <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment>
+                    <string key="content" base64-UTF8="YES">
+Cgo
+</string>
+                    <attributes>
+                        <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+                <fragment content="这里是名字">
+                    <attributes>
+                        <font key="NSFont" size="12" name=".PingFangSC-Regular"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                    </attributes>
+                </fragment>
+            </attributedString>
+            <nil key="highlightedColor"/>
+            <point key="canvasLocation" x="-660.79999999999995" y="72.413793103448285"/>
+        </label>
+    </objects>
+    <resources>
+        <image name="common_button_orange" width="11" height="35"/>
+        <image name="common_button_orange_highlighted" width="11" height="35"/>
+        <image name="common_button_white_disable" width="11" height="35"/>
+    </resources>
+</document>
